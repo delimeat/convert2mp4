@@ -37,7 +37,7 @@ mv $watch_dir/* $process_dir/
     in_file_ext="${in_filename##*.}"
     out_filename="$in_filename_wo_ext".mp4
     vconvert='libx264'
-    aconvert='aac -strict experimental'
+    aconvert='aac'
 
     for vcodec in ${videocodecs[*]}; do
       if ffprobe -show_streams -loglevel quiet "$in_file" | grep "$vcodec"; then
